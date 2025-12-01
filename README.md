@@ -116,5 +116,5 @@ com **Entity Framework Core** e **SQLite**.
 **Adrian dos Santos**\
 Faculdade: **Análise e Desenvolvimento de Sistemas**
 
-Link do video:
+Link do video: https://drive.google.com/file/d/1Lgg90mk_BQC2TLLLoOHlb0N8N5ZmTRH9/view?usp=sharing
 
