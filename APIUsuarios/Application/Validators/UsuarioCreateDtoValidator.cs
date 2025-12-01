@@ -41,6 +41,6 @@ public partial class UsuarioCreateDtoValidator : AbstractValidator<UsuarioCreate
         return age >= 18;
     }
 
-    [GeneratedRegex(@"^$$\d{2}$$ \d{5}-\d{4}$")]
+    [GeneratedRegex(@"^(\+55\s?)?(\(?\d{2}\)?\s?)?9?\d{4}-?\s?\d{4}$")]
     private static partial Regex TelefoneRegex();
 }

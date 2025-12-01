@@ -1,0 +1,72 @@
+{
+  "info": {
+    "_postman_id": "api-usuarios-collection",
+    "name": "API Usuarios",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    }
+  ],
+  "item": [
+    {
+      "name": "GET - Listar Usuarios",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/usuarios"
+      }
+    },
+    {
+      "name": "GET - Buscar por ID",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/usuarios/1"
+      }
+    },
+    {
+      "name": "POST - Criar Usuario (Valido)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Maria Santos\",\n  \"email\": \"maria@email.com\",\n  \"senha\": \"senha123\",\n  \"dataNascimento\": \"1995-08-20\",\n  \"telefone\": \"(21) 98765-4321\"\n}"
+        },
+        "url": "{{baseUrl}}/usuarios"
+      }
+    },
+    {
+      "name": "POST - Criar Usuario (Invalido - Menor 18)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Menor Idade\",\n  \"email\": \"menor@email.com\",\n  \"senha\": \"senha123\",\n  \"dataNascimento\": \"2015-01-01\",\n  \"telefone\": null\n}"
+        },
+        "url": "{{baseUrl}}/usuarios"
+      }
+    },
+    {
+      "name": "PUT - Atualizar Usuario",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Maria Santos Atualizada\",\n  \"email\": \"maria.nova@email.com\",\n  \"dataNascimento\": \"1995-08-20\",\n  \"telefone\": \"(21) 91234-5678\",\n  \"ativo\": true\n}"
+        },
+        "url": "{{baseUrl}}/usuarios/1"
+      }
+    },
+    {
+      "name": "DELETE - Remover Usuario",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/usuarios/1"
+      }
+    }
+  ]
+}
