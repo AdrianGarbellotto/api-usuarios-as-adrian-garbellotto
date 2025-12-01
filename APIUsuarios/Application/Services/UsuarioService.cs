@@ -31,7 +31,7 @@ public class UsuarioService : IUsuarioService
         {
             Nome = dto.Nome.Trim(),
             Email = dto.Email.ToLowerInvariant().Trim(),
-            Senha = dto.Senha, // Em produção, deve ser hasheada
+            Senha = dto.Senha, 
             DataNascimento = dto.DataNascimento,
             Telefone = dto.Telefone?.Trim(),
             Ativo = true,
@@ -71,7 +71,6 @@ public class UsuarioService : IUsuarioService
         if (usuario is null)
             return false;
 
-        // Soft Delete: marca como inativo ao invés de remover
         usuario.Ativo = false;
         usuario.DataAtualizacao = DateTime.UtcNow;
         
